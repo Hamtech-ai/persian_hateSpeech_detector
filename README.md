@@ -51,7 +51,7 @@ some analytic info and EDA about data we used. more info in wiki
 # Contribute :chains:
 
 If you want to help us for better models and new approaches, please contact us, we will be happy
-Email : masoudparpanchi@gmail.com | Mahdi Email
+Email : masoudparpanchi@gmail.com | mhdn1380@gmail.com
 
 Or edit code and send pull request.
 
