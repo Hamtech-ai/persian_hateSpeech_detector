@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+from langdetect import detect
 
 csv_lists=[csv for csv in os.listdir('mini insult csv files/') if '.csv' in csv]
 df=pd.DataFrame()
@@ -15,6 +16,11 @@ df=df.dropna()
 df.index=range(len(df))
 df=df.drop(df[df['tweet'].str.contains('[الفبپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی]')==False].index)
 df.index=range(len(df))
+
+for i,t in df['tweet'].items():
+    if detect(t)=='ar':
+        df=df.drop(i)
+    else:continue
 
 df['label']=np.ones(len(df),dtype="int")
 df.columns=['text','label']
