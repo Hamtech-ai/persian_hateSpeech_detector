@@ -3,6 +3,7 @@ import pandas as pd
 import twint
 import pickle
 from IPython.display import clear_output
+import os
 
 with open('Persian_swear_words.txt','r') as l:
     bw=l.read().split(', ')
@@ -14,6 +15,9 @@ remove_columns=['id', 'conversation_id', 'created_at', 'date', 'timezone', 'plac
        'search', 'near', 'geo', 'source', 'user_rt_id', 'user_rt',
        'retweet_id', 'reply_to', 'retweet_date', 'translate', 'trans_src',
        'trans_dest']
+
+if not os.path.exists('mini insult csv files/'):
+    os.makedirs('mini insult csv files/')
 
 def Crawling_insults():
 
